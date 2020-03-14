@@ -23,6 +23,19 @@
         <!-- React app will be injected here. -->
     </div>
 
+    <script type="module">
+        // Import quotes from separate file.
+        // Module import works only through a local server due to CORS restrictions. So use this e.g.:
+        // python -m SimpleHTTPServer 8000
+        // or
+        // php -S localhost:8000
+
+        import { quotes } from './quotes.js';
+        window.DATA_QUOTES = quotes();
+    </script>
+
+    <script src="./app.js" type="text/babel"></script>
+
     <!-- FreeCodeCamp test suite only works in Chrome. Please read the README for more details. -->
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
